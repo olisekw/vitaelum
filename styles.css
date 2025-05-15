@@ -1,0 +1,11 @@
+/* GitHub Contribution */
+
+
+.calendar span, .calendar caption, .contrib-column, .f6, .calendar tr:last-of-type, .calendar .ContributionCalendar-label{
+  display: none;
+}
+.calendar{
+  border: 0px;
+  background-color: black;
+}
+
