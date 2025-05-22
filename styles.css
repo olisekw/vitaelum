@@ -1,11 +1,288 @@
-/* GitHub Contribution */
 
 
-.calendar span, .calendar caption, .contrib-column, .f6, .calendar tr:last-of-type, .calendar .ContributionCalendar-label{
+
+
+html,
+body {
+/* Scrolling */
+  overflow: hidden;
+  margin: 0px;  
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+}
+#main::-webkit-scrollbar {
   display: none;
 }
-.calendar{
-  border: 0px;
-  background-color: black;
+/* Sections */
+
+/* LOADING */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  pointer-events: all;
 }
 
+#loading.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* MAIN */
+
+#main {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  display: none;
+}
+section {
+  height: 100vh;
+  background-color: black;
+
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  background-color: #f0f0f0;
+}
+
+/* NAVBAR */
+#navbar {
+  background-color: white;
+  justify-content: end;
+  gap: 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* example height */
+  background-color: white;
+  z-index: 1000;
+}
+
+
+
+/* MENU */
+
+#menu-button {
+  /* delete position fixed and make it with other navbuttons */
+  position: fixed;
+right: 0px;
+  z-index: 1001;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#menu {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Hidden off screen */
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+#menu.open {
+  right: 0px;
+}
+
+  /* darkout */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* black with opacity */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999; /* below the menu, above everything else */
+}
+
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+#hero {
+}
+#about {
+}
+
+/* PROJECTS */
+
+#project-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#project-preview.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.preview-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+}
+
+#close-preview {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.project-card {
+  background: white;
+  color: black;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+#experience {
+}
+#footer {
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+}
+
+/* GitHub Contribution */
+
+#calendar {
+  display: none;
+}
+
+.calendar span,
+.calendar caption,
+.contrib-column,
+.f6,
+.calendar .ContributionCalendar-label {
+  display: none;
+}
+.calendar {
+  border: 0px;
+  min-height: 100px;
+}
+
+
+/* Night Mode */
+
+
+/* Light Mode */
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+section {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* Night mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode section {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+/* Optional: style the toggle */
+#night-mode-toggle {
+  z-index: 10000;
+  padding: 10px;
+  border: none;
+  background-color: #eee;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode #night-mode-toggle {
+  background-color: #333;
+  color: white;
+}
+
+/* Home Icon */
+
+#home-button {
+  /* delete position fixed and make it with other navbuttons */
+  position: fixed;
+  z-index: 1001;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+button{
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+}
+
+.hidden {
+  display: none !important;
+}

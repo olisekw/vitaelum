@@ -1,22 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
-<link rel="stylesheet" href="/styles.css">
-</head>
-<body>
- 
-  <div class="calendar">
-    Loading the data just for you.
-  </div>
-  
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vitaelum</title>
+    <title>Oliver Bujdos | Front-End Web Developer Portfolio</title>
+    <meta name="description" content="Oliver Bujdos' portfolio – Front-End Web Developer skilled in React, JavaScript, HTML, and CSS." />
+    <meta name="author" content="Oliver Bujdos" />
+    <meta name="robots" content="index, follow" />
 
-  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-  <script>
-    GitHubCalendar(".calendar", "olisekw");
-  </script>
-</body>
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="/images/image-removebg-preview 1.png" sizes="32x32" type="image/png" />
+    <meta name="description" content="Brief, keyword-rich page summary." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <button id="night-mode-toggle">🌙</button>
+      <button id="about-button">About</button>
+      <button id="projects-button">Projects</button>
+      <button id="contact-button">Contact</button>
+    </nav>
+    <button id="menu-button"></button>
+    <button id="home-button"></button>
+    <!-- Loading -->
+    <section id="loading">
+      <h1>LOADING</h1>
+    </section>
+    <main id="main">
+      <!-- Menu -->
+      <section id="menu">
+        <button id="menu-about-button">About</button>
+        <button id="menu-contact-button">Contact</button>
+        <button id="menu-projects-button">Projects</button>
+      </section>
+      <div id="overlay"></div>
+
+      <!-- Hero -->
+      <section id="hero">
+        <h1>HERO</h1>
+      </section>
+      <!-- About -->
+      <section id="about">
+        <h1>ABOUT</h1>
+      </section>
+      <!-- Experience -->
+      <section id="experience">
+        <h1>EXPERIENCES</h1>
+      </section>
+      <!-- Projects -->
+      <section id="projects">
+        <div
+          class="project-card"
+          data-link="https://github.com/olisekw/new"
+          more-text="blaha"
+          data-title="Project 1"
+          data-description="A cool project using React and APIs."
+        >
+          Project 1
+        </div>
+        <div
+          class="project-card"
+          data-link="https://github.com/olisekw/vitaelum"
+          more-text="aha"
+          data-title="Project 2"
+          data-description="Thats the stuff i like"
+        >
+          Project 2
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <section id="contact">
+        <h1>CONTACT</h1>
+      </section>
+    </main>
+
+    <div id="project-preview" class="hidden">
+      <div class="preview-content">
+        <button id="close-preview">✕</button>
+        <h2 id="preview-title"></h2>
+        <p id="preview-description"></p>
+        <p id="preview-text"></p>
+        <a id="preview-link" href="#" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <!-- GitHub Contribution -->
+    <div id="calendar" class="calendar">Loading the data just for you.</div>
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
